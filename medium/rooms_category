@@ -1,0 +1,14 @@
+-- Задача: Необходимо категоризовать жилье на economy, comfort, premium по цене соответственно <= 100, 100 < цена < 200, >= 200. 
+В качестве результата вывести таблицу с названием категории и количеством жилья, попадающего в данную категорию
+-- Уровень: Средний
+-- Ссылка на задачу: https://sql-academy.org/ru/trainer/tasks/70
+
+SELECT CASE
+		    WHEN price <= 100 THEN 'economy'
+		    WHEN price > 100
+		    AND price < 200 THEN 'comfort'
+		    ELSE 'premium'
+	     END as category,
+	     COUNT(*) as count
+FROM Rooms
+GROUP BY category;
