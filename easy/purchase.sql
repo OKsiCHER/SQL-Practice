@@ -1,0 +1,8 @@
+-- Задача: Посчитай доход с женской аудитории (доход = сумма(price * items)). Обратите внимание, что в таблице женская аудитория 
+имеет поле user_gender «female» или «f»
+-- Уровень: Легкий
+-- Ссылка на задачу: https://sql-academy.org/ru/trainer/tasks/99
+
+SELECT SUM(price * items) AS income_from_female
+FROM Purchases
+WHERE user_gender IN ('female', 'f');
