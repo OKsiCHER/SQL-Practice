@@ -1,0 +1,11 @@
+-- Задача: Вывести время отлета и время прилета для каждого перелета в формате "ЧЧ:ММ, ДД.ММ - ЧЧ:ММ, ДД.ММ", 
+где часы и минуты с ведущим нулем, а день и месяц без
+-- Уровень: Средний
+-- Ссылка на задачу: https://sql-academy.org/ru/trainer/tasks/67
+
+SELECT CONCAT(
+		DATE_FORMAT(time_out, "%H:%i, %e.%c"),
+		' - ',
+		DATE_FORMAT(time_in, "%H:%i, %e.%c")
+	) as flight_time
+FROM Trip;
